@@ -5,7 +5,7 @@ import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.chenjunlong.springboot.example.ratelimit.CustomRateLimitCallable;
 import com.chenjunlong.springboot.example.ratelimit.CustomRateLimitHandler;
-import com.github.jpstarter.PrometheusLoader;
+import com.github.jpstarter.PrometheusConsulRegister;
 import com.github.jratelimit.annotation.RateLimitComponentScan;
 import com.github.jratelimit.filter.ControllerRateLimitHandler;
 import com.github.jratelimit.filter.ControllerRateLimitInterceptor;
@@ -46,7 +46,7 @@ public class AnnotationRateLimitBootStrapApplication implements WebMvcConfigurer
     }
 
     public static void main(String[] args) throws Exception {
-        PrometheusLoader.initialize();
+        PrometheusConsulRegister.initialize();
         SpringApplication.run(AnnotationRateLimitBootStrapApplication.class, args);
     }
 }

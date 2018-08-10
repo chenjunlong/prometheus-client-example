@@ -8,7 +8,7 @@ import io.prometheus.client.Counter;
  */
 public class CustomRateLimitCallable implements RateLimitCallable {
 
-    static final Counter requestCounter = Counter.build()
+    private static final Counter requestCounter = Counter.build()
             .name("rate_limit_http_requests_total").labelNames("class", "method")
             .help("Total requests.").register();
 
